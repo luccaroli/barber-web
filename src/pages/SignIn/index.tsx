@@ -4,19 +4,28 @@ import { Form } from '@unform/web'
 import { FormHandles } from '@unform/core'
 import * as Yup from 'yup'
 
+import { useAuth } from '../../context/AuthContext'
 import getValidationErrors from '../../utils/getValidationErrors'
 
-import logoImg from '../../assets/logo.svg'
+import logoImg from '../../assets/logo1.svg'
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 
 import { Container, Content, Background } from './styles'
 
-const SignIn: React.FC = () => {
-  const formRef = useRef<FormHandles>(null)    
+interface SignInFormData {
+  email: string
+  password: string
+}
 
-  const handleSubmit = useCallback(async (data: object) => {
+const SignIn: React.FC = () => {
+  const formRef = useRef<FormHandles>(null)   
+  
+  const { signIn } = useAuth()
+  
+
+  const handleSubmit = useCallback(async (data: SignInFormData) => {
     try {
       formRef.current?.setErrors({})
       
@@ -30,18 +39,21 @@ const SignIn: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false
       })
-
+      signIn({
+        email: data.email,
+        password: data.password
+      })
     } catch (error) {
       const errors = getValidationErrors(error)
 
       formRef.current?.setErrors(errors)
     }
-  }, [])
+  }, [signIn])
 
   return (
     <Container>
       <Content>
-        <img src={logoImg} alt="GoBarber"/>
+        <img src={logoImg} style={{ height: "35%" }} alt="GoBarber"/>
 
         <Form ref={formRef} onSubmit={handleSubmit}>
           <h1>Faça seu logon</h1>

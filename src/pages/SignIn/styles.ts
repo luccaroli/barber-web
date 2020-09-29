@@ -21,6 +21,7 @@ export const Content = styled.div`
 
   form {
     margin: 80px 0;
+    margin-top: 20px;
     width: 340px; 
 
     text-align: center;
@@ -64,6 +65,6 @@ export const Content = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${singInBackground}) no-repeat center;
+  background: url(${'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'}) no-repeat center;
   background-size: cover;
 `
