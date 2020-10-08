@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { 
   Container,
@@ -8,6 +8,8 @@ import {
   Content,
   Schedule,
   NextAppointment,
+  Section,
+  Appointment,
   Calendar,
 } from './styles';
 import logoImg from '../../assets/logo1.svg'
@@ -15,6 +17,8 @@ import { FiClock, FiPower } from 'react-icons/fi';
 import { useAuth } from '../../hooks/AuthContext';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date())
+
   const { signOut, user } = useAuth()
 
   return (
@@ -59,6 +63,57 @@ const Dashboard: React.FC = () => {
                 </span>
               </div>
             </NextAppointment>
+
+            <Section>
+              <strong>Manhã</strong>
+
+              <Appointment>
+                <span>
+                  <FiClock />
+                  20:00
+                </span>
+
+                <div>
+                  <img 
+                    src="https://avatars0.githubusercontent.com/u/61463908?s=460&u=6b0115a003370eaaf276cbc2ed2246aab43795a8&v=4" 
+                    alt="Lucas Oliveira"/>
+                  <strong>Lucas Oliveira</strong>
+                </div>
+              </Appointment>
+
+              <Appointment>
+                <span>
+                  <FiClock />
+                  20:00
+                </span>
+
+                <div>
+                  <img 
+                    src="https://avatars0.githubusercontent.com/u/61463908?s=460&u=6b0115a003370eaaf276cbc2ed2246aab43795a8&v=4" 
+                    alt="Lucas Oliveira"
+                  />
+                  <strong>Lucas Oliveira</strong>
+                </div>
+              </Appointment>
+            </Section>
+
+            <Section>
+              <strong>Tarde</strong>
+
+              <Appointment>
+                <span>
+                  <FiClock />
+                  20:00
+                </span>
+
+                <div>
+                  <img src="https://avatars0.githubusercontent.com/u/61463908?s=460&u=6b0115a003370eaaf276cbc2ed2246aab43795a8&v=4" alt="Lucas Oliveira"/>
+
+                  <strong>Lucas Oliveira</strong>
+                </div>
+              </Appointment>
+            </Section>
+
           </Schedule>
           <Calendar />
         </Content>
