@@ -27,4 +27,16 @@ export default createGlobalStyle`
     cursor: pointer; 
   }
 
+  :root {
+    --primary: #ff9000;
+    --secundary: #3E3B47;
+    --text-primary: #F4EDE8;
+    --inputs: #232129;
+    --text-secundary: #999591;
+    --gray-hard: #666360;
+    --black-medium: #28262E;
+    --background: #312E38;
+
+  }
+
 `
