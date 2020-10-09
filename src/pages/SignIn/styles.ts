@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { shade } from 'polished'
 
-import singInBackground from '../../assets/sign-in-background.png'
 
 export const Container = styled.div`
   height: 100vh;
@@ -51,7 +50,7 @@ export const AnimationContainer = styled.div`
     }
 
     a {
-      color: #f4ede8;
+      color: var(--text-primary);
       display: block;
       margin-top: 24px;
       text-decoration: none;
@@ -64,7 +63,7 @@ export const AnimationContainer = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: var(--primary);
     display: block;
     margin-top: 24px;
     text-decoration: none;

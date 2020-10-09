@@ -14,8 +14,8 @@ export const Container = styled.div<ContainerProps>`
   padding: 16px;
   width: 100%;
 
-  border: 2px solid #232129;
-  color: #666360;
+  border: 2px solid var(--inputs);
+  color: var(--gray-hard);
 
   display: flex;
   align-items: center;
@@ -25,16 +25,16 @@ export const Container = styled.div<ContainerProps>`
     }
 
   ${(props) => props.isErrored && css`
-    border-color: #c53030;
+    border-color: var(--error);
   `}
 
   ${(props) => props.isFocused && css`
-    color: #ff9000;
-    border-color: #ff9000;
+    color: var(--primary);
+    border-color: var(--primary);
   `}
 
   ${(props) => props.isFilled && css`
-    color: #ff9000;
+    color: var(--primary);
   `}
 
   
@@ -42,11 +42,11 @@ export const Container = styled.div<ContainerProps>`
     flex: 1;
     background: transparent;
     border: 0;
-    color: #f4ede8;
+    color: var(--text-primary);
 
 
     &::placeholder {
-      color: #666360;
+      color: var(--gray-hard);
     }
   }
 
@@ -64,11 +64,11 @@ export const Error = styled(Tooltip)`
   }
 
   span {
-    background: #c53030;
-    color: #fff;
+    background: var(--error);
+    color: var(--text-primary);
 
     &::before {
-      border-color: #c53030 transparent;
+      border-color: var(--error) transparent;
     }
   }
 `
