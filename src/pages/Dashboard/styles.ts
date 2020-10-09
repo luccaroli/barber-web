@@ -161,6 +161,10 @@ export const Section = styled.section`
     padding-bottom: 16px;
     margin-bottom: 16px;
   }
+
+  > p {
+    color: var(--text-secundary)
+  }
 `
 
 export const Appointment = styled.div`
