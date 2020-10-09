@@ -53,9 +53,15 @@ export const Profile = styled.div`
       color: var(--text-primary);
     }
 
-    strong {
+    a {
+      text-decoration: none;
       color: var(--primary);
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
+
   }
 `
 
