@@ -36,6 +36,11 @@ export default createGlobalStyle`
     --gray-hard: #666360;
     --black-medium: #28262E;
     --background: #312E38;
+    --error: #c53030;
+    --info: #3172b7;
+    --success: #2e656a;
+    
+
 
   }
 
